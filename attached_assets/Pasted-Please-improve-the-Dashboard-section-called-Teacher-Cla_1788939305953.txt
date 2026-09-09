@@ -1,0 +1,99 @@
+Please improve the Dashboard section called “Teacher / Class Progress” for the HoD view.
+
+Current problem:
+
+The dashboard shows progress summaries for each teacher/class, for example a panel might show:
+
+Year 7
+MKM
+3 lessons done
+
+As HoD, I need to know what those “3 lessons done” actually are. At the moment, the dashboard gives the summary but does not make it easy to drill into the detail.
+
+Required change:
+
+1. Make each Teacher / Class Progress panel clickable.
+
+2. When I click a panel, open a dedicated detail view inside the same website.
+
+Do NOT open a new browser tab.
+
+For example:
+
+Dashboard
+→ click “Year 7 – MKM”
+→ open the Year 7 SoW filtered automatically to MKM and the relevant class.
+
+3. The detail page should show the actual Scheme of Work for that teacher/class, including:
+
+Completed lessons
+Current/latest completed lesson
+Lessons still to teach
+Unit names
+Lesson names
+Term
+Assessment points where relevant
+Existing completion status already stored by the system
+
+I should immediately be able to see which lessons make up the “3 completed” shown on the dashboard.
+
+4. At the top of the detail view, clearly show something like:
+
+Year 7 • MKM • [Class Name]
+3 lessons completed
+
+Include a clear “Back to Dashboard” button or breadcrumb.
+
+For example:
+
+Dashboard > Year 7 > MKM
+
+5. Preserve the Dashboard state.
+
+If I had selected a particular Year Group, Term, Teacher or other dashboard filter before opening the detail page, returning to the Dashboard should keep those selections.
+
+I do not want to repeatedly reset my HoD dashboard filters.
+
+6. Browser Back should also return me to the same Dashboard state.
+
+7. Do not remove or change the existing Teacher View.
+
+This new feature is mainly a drill-down from the HoD Dashboard.
+
+The workflow should be:
+
+HoD Dashboard
+→ quick overview of all teachers/classes
+→ click one progress panel when more detail is needed
+→ inspect that teacher/class SoW
+→ return to Dashboard and continue reviewing other classes.
+
+8. Do not force me to use the existing Year/Teacher dropdowns every time I want to inspect a class.
+
+Clicking the dashboard panel should automatically pass the correct teacher, year group and class into the detail view.
+
+9. Make the entire progress card clickable, but also add a small visual cue such as:
+
+View progress >
+
+This should make it obvious that more information is available.
+
+10. Do not hard-code teacher names, classes or year groups.
+
+Generate the links/details from the same data already used to create the Teacher / Class Progress panels.
+
+11. Keep the existing design and styling of the WCIB Maths Scheme of Work site. Do not redesign the dashboard.
+
+12. If a teacher teaches more than one class in the same year group, the detail view must identify the specific class selected rather than combining unrelated progress.
+
+Important:
+
+The dashboard should remain the high-level HoD overview.
+
+The new detail view is for answering:
+
+“What exactly has this class completed?”
+“Where are they currently in the SoW?”
+“What comes next?”
+
+Please implement this without changing the existing progress data structure unless necessary.

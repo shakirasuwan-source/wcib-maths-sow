@@ -551,6 +551,63 @@
   .tc-term-bar.amber{background:var(--amber);}
   .tc-term-bar.red{background:var(--accent);}
   .tc-pills{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  .teacher-card.progress-card{cursor:pointer;position:relative;}
+  .teacher-card.progress-card:focus{outline:3px solid rgba(110,138,165,.42);outline-offset:2px;}
+  .teacher-card.progress-card:focus-visible{box-shadow:0 0 0 4px rgba(168,191,209,.35),0 6px 18px rgba(47,54,64,.08);}
+  .progress-card-cue{display:flex;align-items:center;justify-content:flex-end;gap:5px;margin-top:11px;
+    padding-top:9px;border-top:1px solid var(--mid-gray);font-size:11px;font-weight:700;color:var(--blue-d);}
+  .progress-card-cue svg{width:13px;height:13px;transition:transform .15s ease;}
+  .progress-card:hover .progress-card-cue svg,.progress-card:focus .progress-card-cue svg{transform:translateX(3px);}
+  .progress-detail{padding:18px 20px 32px;max-width:1400px;margin:0 auto;}
+  .progress-detail-back{display:inline-flex;align-items:center;gap:7px;border:0;background:transparent;
+    color:var(--blue-d);font:600 12px var(--font);padding:7px 0;margin-bottom:13px;cursor:pointer;}
+  .progress-detail-back:hover{text-decoration:underline;}
+  .progress-detail-back svg{width:15px;height:15px;}
+  .progress-detail-head{background:#fff;border:1px solid var(--mid-gray);border-radius:12px;
+    box-shadow:var(--soft-shadow);padding:17px 18px;margin-bottom:14px;}
+  .progress-detail-kicker{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-gray);}
+  .progress-detail-title{font:700 23px/1.2 var(--font-head);color:var(--navy);margin-top:5px;}
+  .progress-detail-meta{font-size:12px;color:var(--dark-gray);margin-top:5px;}
+  .progress-detail-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:15px;}
+  .progress-detail-stat{background:var(--gray);border:1px solid var(--mid-gray);border-radius:9px;padding:10px 12px;}
+  .progress-detail-stat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--dark-gray);}
+  .progress-detail-stat-value{font-size:15px;font-weight:700;color:var(--navy);margin-top:4px;line-height:1.3;}
+  .progress-detail-stat-value small{display:block;font-size:11px;font-weight:500;color:var(--dark-gray);margin-top:2px;}
+  .progress-detail-section-title{font-size:11px;font-weight:700;color:var(--dark-gray);text-transform:uppercase;
+    letter-spacing:.08em;margin:18px 0 9px;}
+  .progress-sow{display:flex;flex-direction:column;gap:12px;}
+  .progress-term{background:#fff;border:1px solid var(--mid-gray);border-radius:11px;overflow:hidden;box-shadow:var(--soft-shadow);}
+  .progress-term-head{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--header-bg);
+    color:#fff;padding:10px 14px;font-size:13px;font-weight:700;}
+  .progress-term-count{font-size:11px;font-weight:600;color:rgba(255,255,255,.78);}
+  .progress-unit{padding:0 12px 9px;}
+  .progress-unit-name{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 4px 7px;
+    border-bottom:1px solid var(--mid-gray);font-size:11px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--navy);}
+  .progress-unit-count{font-size:10px;font-weight:500;color:var(--dark-gray);text-transform:none;letter-spacing:0;}
+  .progress-lesson{display:grid;grid-template-columns:72px minmax(0,1fr) 94px 94px;gap:10px;align-items:center;
+    padding:8px 4px;border-bottom:1px solid var(--border-2);font-size:12px;}
+  .progress-lesson:last-child{border-bottom:0;}
+  .progress-lesson:hover{background:var(--gray);}
+  .progress-lesson-id{font-size:10px;font-weight:700;color:var(--dark-gray);}
+  .progress-lesson-name{font-weight:600;color:var(--navy);line-height:1.3;}
+  .progress-lesson-detail{font-size:10.5px;color:var(--dark-gray);line-height:1.35;margin-top:2px;}
+  .progress-lesson-assessment{font-size:10px;font-weight:700;color:var(--blush-d);background:var(--blush-bg);
+    border-radius:999px;padding:3px 7px;text-align:center;white-space:nowrap;}
+  .progress-lesson-type{font-size:10px;color:var(--dark-gray);text-align:center;}
+  .progress-status{display:inline-flex;justify-content:center;border-radius:999px;padding:3px 7px;font-size:10px;
+    font-weight:700;white-space:nowrap;}
+  .progress-status.done{background:var(--mint-bg);color:var(--mint-d);}
+  .progress-status.prog{background:var(--blue-bg);color:var(--blue-d);}
+  .progress-status.not{background:var(--blush-bg);color:var(--blush-d);}
+  .progress-status.na{background:var(--gray);color:var(--dark-gray);}
+  @media(max-width:700px){
+    .progress-detail{padding:14px 16px 26px;}
+    .progress-detail-overview{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .progress-lesson{grid-template-columns:56px minmax(0,1fr) 86px;gap:5px 7px;}
+    .progress-lesson-type{grid-column:2;grid-row:2;text-align:left;justify-self:start;}
+    .progress-status{grid-column:3;grid-row:1 / span 2;}
+  }
 
   /* ── Dept summary ── */
   .dash-summary{background:var(--gray);border-radius:12px;padding:18px 22px;
@@ -679,6 +736,10 @@
     <div id="teacher-progress-content"></div>
   </div>
   <div id="hod-health-content"></div>
+</div>
+
+<div id="view-hod-progress" class="view">
+  <div id="hod-progress-detail"></div>
 </div>
 
 <div id="view-teacher" class="view">
@@ -3857,17 +3918,78 @@ function folderBtn(lesson, yg){
 function showView(name){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('view-'+name).classList.add('active');
-  document.querySelector(`.nav-btn[data-view="${name}"]`).classList.add('active');
+  const view=document.getElementById('view-'+name);
+  if(!view) return;
+  view.classList.add('active');
+  const navName=name==='hod-progress'?'hod':name;
+  const navButton=document.querySelector(`.nav-btn[data-view="${navName}"]`);
+  if(navButton) navButton.classList.add('active');
   refreshActiveView();
 }
 function refreshActiveView(){
-  const id=document.querySelector('.view.active').id;
+  const active=document.querySelector('.view.active');
+  if(!active) return;
+  const id=active.id;
   if(id==='view-hod') renderHOD();
+  else if(id==='view-hod-progress') renderDashboardProgressDetail();
   else if(id==='view-teacher') renderTeacher();
   else if(id==='view-assessments') renderAssessments();
   else if(id==='view-calendar') renderCalendar();
 }
+
+let hodDashboardState={year:7,scrollY:0};
+let hodProgressDetail=null;
+
+function focusDashboardProgressHeading(){
+  window.requestAnimationFrame(()=>{
+    document.getElementById('hod-progress-heading')?.focus({preventScroll:true});
+  });
+}
+
+function restoreDashboardProgressContext(){
+  window.setTimeout(()=>{
+    window.scrollTo(0,hodDashboardState.scrollY||0);
+    if(!hodProgressDetail) return;
+    const target=[...document.querySelectorAll('#teacher-progress-content .progress-card')]
+      .find(card=>Number(card.dataset.progressYg)===Number(hodProgressDetail.yg)
+        &&card.dataset.progressSet===String(hodProgressDetail.set));
+    target?.focus({preventScroll:true});
+  },0);
+}
+
+function openDashboardClassProgress(yg,set){
+  hodDashboardState={year:hodYear,scrollY:window.scrollY};
+  hodProgressDetail={yg:Number(yg),set:String(set)};
+  history.pushState({wcibDashboardProgress:true, dashboard:hodDashboardState, detail:hodProgressDetail},'',`#dashboard-progress-${encodeURIComponent(yg)}-${encodeURIComponent(set)}`);
+  showView('hod-progress');
+  window.scrollTo(0,0);
+  focusDashboardProgressHeading();
+}
+
+function closeDashboardProgress(useHistory=true){
+  if(useHistory && history.state && history.state.wcibDashboardProgress){
+    history.back();
+    return;
+  }
+  showView('hod');
+  restoreDashboardProgressContext();
+}
+
+window.addEventListener('popstate',e=>{
+  const state=e.state;
+  if(state && state.wcibDashboardProgress){
+    hodDashboardState=state.dashboard||hodDashboardState;
+    hodYear=Number(hodDashboardState.year)||7;
+    hodProgressDetail=state.detail||null;
+    showView('hod-progress');
+    window.scrollTo(0,0);
+    focusDashboardProgressHeading();
+  }else{
+    showView('hod');
+    renderYearTabs();
+    restoreDashboardProgressContext();
+  }
+});
 
 function openDashboardClass(yg,set){
   const teacherSelect=document.getElementById('sel-teacher');
@@ -4558,7 +4680,7 @@ function renderHOD(){
       ? ialInfo.label.replace(/\s*\([^)]*\)\s*$/, '')
       : displaySet(hodYear,set);
     const subLine = `Year ${hodYear} · ${p.done} of ${p.total} lessons done`;
-    cardsHtml+=`<div class="teacher-card">
+    cardsHtml+=`<div class="teacher-card progress-card" tabindex="0" role="button" aria-label="View progress for Year ${hodYear} ${esc(setDisplay)}, ${esc(teacher)}" data-progress-yg="${hodYear}" data-progress-set="${esc(set)}">
       <div class="tc-header">
         <div class="tc-avatar">${teacher.length>5?teacher.slice(0,5):teacher}</div>
         <div>
@@ -4581,6 +4703,9 @@ function renderHOD(){
           <span class="pill prog">⟳ ${p.prog} in progress</span>
           <span class="pill not">✗ ${p.ns} not started</span>
         </div>
+         <div class="progress-card-cue">View progress
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="m13 6 6 6-6 6"></path></svg>
+         </div>
       </div>
     </div>`;
   });
@@ -4835,6 +4960,13 @@ function renderHOD(){
   document.getElementById('hod-content').innerHTML=insightsHtml;
   document.getElementById('teacher-progress-content').innerHTML=summaryHtml+cardsHtml;
   document.getElementById('hod-health-content').innerHTML=healthPanelHtml;
+  document.querySelectorAll('#teacher-progress-content .progress-card').forEach(card=>{
+    const open=()=>openDashboardClassProgress(card.dataset.progressYg,card.dataset.progressSet);
+    card.addEventListener('click',open);
+    card.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}
+    });
+  });
   document.getElementById('stat-done').textContent=lessonsDoneWeek;
   document.getElementById('stat-prog').textContent = noPlannedPace ? '0' : behindRows.length;
   document.getElementById('stat-behind').textContent=assessments7;
@@ -4846,6 +4978,119 @@ function renderHOD(){
     : `Across ${behindYears} year group${behindYears===1?'':'s'}`;
   document.getElementById('stat-assess-lbl').textContent='External exams coming soon';
   document.getElementById('stat-assess-sub').textContent='Next 30 days';
+}
+
+function renderDashboardProgressDetail(){
+  const host=document.getElementById('hod-progress-detail');
+  if(!host) return;
+  const detail=hodProgressDetail;
+  if(!detail){
+    host.innerHTML=`<div class="progress-detail"><button class="progress-detail-back" type="button" onclick="closeDashboardProgress(false)">Back to Dashboard</button></div>`;
+    return;
+  }
+  const yg=Number(detail.yg), set=String(detail.set);
+  const sow=sowFor(yg,set);
+  const teacher=(TEACHERS_BY_YG[yg]||{})[set]||set;
+  const ialInfo=(IAL_INFO[yg]||{})[set];
+  const setLabel=ialInfo ? ialInfo.label.replace(/\s*\([^)]*\)\s*$/,'') : displaySet(yg,set);
+  if(!sow){
+    host.innerHTML=`<div class="progress-detail">
+      <button class="progress-detail-back" type="button" onclick="closeDashboardProgress()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        Dashboard
+      </button>
+      <div class="coming-soon"><h3>Year ${esc(String(yg))} — no scheme of work</h3><p>This class does not have a stored scheme of work yet.</p></div>
+    </div>`;
+    return;
+  }
+  const teachable=getTeachable(sow);
+  const teachableIds=new Set(teachable.map(l=>l.id));
+  const p=getProgress(set,sow);
+  const remaining=teachable.filter(l=>{
+    const status=getStatus(l.id,set);
+    return status!=='Done'&&status!=='In progress'&&status!=='N/A';
+  }).length;
+  const doneRows=teachable.filter(l=>getStatus(l.id,set)==='Done');
+  const latest=doneRows.length?doneRows[doneRows.length-1]:null;
+  const inProgress=teachable.find(l=>getStatus(l.id,set)==='In progress')||null;
+  const current=inProgress||latest;
+  const currentIndex=current?teachable.indexOf(current):-1;
+  const isActionable=l=>{
+    const status=getStatus(l.id,set);
+    return status!=='Done'&&status!=='N/A';
+  };
+  const next=teachable.find((l,index)=>index>currentIndex&&isActionable(l))
+    ||teachable.find(isActionable)
+    ||null;
+  const lessonSummary=l=>l?`${l.lessonNo||'Lesson'} · ${l.lessonName||'Untitled lesson'}`:'—';
+  const statusLabel=s=>s==='Done'?'Done':s==='In progress'?'In progress':s==='N/A'?'N/A':'Not started';
+  const statusClassName=s=>s==='Done'?'done':s==='In progress'?'prog':s==='N/A'?'na':'not';
+  const position=current
+    ? `${current.lessonNo||'Lesson'} · ${current.lessonName||'Current lesson'}`
+    : 'No lesson currently in progress';
+  const positionStatus=current
+    ? `Status: ${statusLabel(getStatus(current.id,set))}`
+    : (p.total>0&&p.done===p.total?'Complete':'Not started');
+
+  const termOrder=[];
+  const byTerm=new Map();
+  sow.forEach(lesson=>{
+    const term=lesson.term||'Unassigned term';
+    if(!byTerm.has(term)){byTerm.set(term,[]);termOrder.push(term);}
+    byTerm.get(term).push(lesson);
+  });
+  const termsHtml=termOrder.map(term=>{
+    const termLessons=byTerm.get(term);
+    const termTracked=termLessons.filter(l=>teachableIds.has(l.id));
+    const termDone=termTracked.filter(l=>getStatus(l.id,set)==='Done').length;
+    const units=[]; const byUnit=new Map();
+    termLessons.forEach(l=>{
+      const unit=l.unitName||'Other lessons';
+      if(!byUnit.has(unit)){byUnit.set(unit,[]);units.push(unit);}
+      byUnit.get(unit).push(l);
+    });
+    const unitsHtml=units.map(unit=>{
+      const lessons=byUnit.get(unit);
+      return `<div class="progress-unit">
+        <div class="progress-unit-name"><span>${esc(unit)}</span><span class="progress-unit-count">${lessons.length} lesson${lessons.length===1?'':'s'}</span></div>
+        ${lessons.map(lesson=>{
+          const status=teachableIds.has(lesson.id)?statusLabel(getStatus(lesson.id,set)):'N/A';
+          const type=lesson.type==='assessment'?'Assessment':lesson.type==='cse'?'CSE':lesson.type==='flex'?'Flex':lesson.type==='calendar'?'Calendar':'Lesson';
+          return `<div class="progress-lesson">
+            <div class="progress-lesson-id">${esc(String(lesson.lessonNo||'—'))}</div>
+            <div><div class="progress-lesson-name">${esc(lesson.lessonName||'Untitled lesson')}</div>
+              <div class="progress-lesson-detail">${lesson.dates?esc(lesson.dates):''}${lesson.obj?` · ${esc(lesson.obj)}`:''}</div></div>
+            <div class="progress-lesson-type${lesson.type==='assessment'?' progress-lesson-assessment':''}">${esc(type)}</div>
+            <span class="progress-status ${statusClassName(status)}">${esc(status)}</span>
+          </div>`;
+        }).join('')}
+      </div>`;
+    }).join('');
+    return `<section class="progress-term">
+      <div class="progress-term-head"><span>${esc(term)} Term</span><span class="progress-term-count">${termDone}/${termTracked.length} tracked complete</span></div>
+      ${unitsHtml}
+    </section>`;
+  }).join('');
+
+  host.innerHTML=`<div class="progress-detail">
+    <button class="progress-detail-back" type="button" onclick="closeDashboardProgress()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+      Dashboard
+    </button>
+    <header class="progress-detail-head">
+      <div class="progress-detail-kicker">Read-only class progress</div>
+      <h2 class="progress-detail-title" id="hod-progress-heading" tabindex="-1">Year ${esc(String(yg))} · ${esc(teacher)} · ${esc(setLabel)}</h2>
+      <div class="progress-detail-meta">${p.done} lesson${p.done===1?'':'s'} completed · ${p.prog} in progress · ${remaining} still to teach</div>
+      <div class="progress-detail-overview">
+        <div class="progress-detail-stat"><div class="progress-detail-stat-label">Completed</div><div class="progress-detail-stat-value">${p.done} of ${p.total}<small>${p.pct}% of tracked lessons</small></div></div>
+        <div class="progress-detail-stat"><div class="progress-detail-stat-label">Latest completed</div><div class="progress-detail-stat-value">${esc(lessonSummary(latest))}<small>${latest&&latest.dates?esc(latest.dates):'No completed lessons yet'}</small></div></div>
+        <div class="progress-detail-stat"><div class="progress-detail-stat-label">Current position</div><div class="progress-detail-stat-value">${esc(position)}<small>${esc(positionStatus)}</small></div></div>
+        <div class="progress-detail-stat"><div class="progress-detail-stat-label">Next lesson</div><div class="progress-detail-stat-value">${esc(lessonSummary(next))}<small>${next&&next.dates?esc(next.dates):'No later tracked lesson'}</small></div></div>
+      </div>
+    </header>
+    <div class="progress-detail-section-title">Scheme of Work · ${p.total} tracked lessons</div>
+    <div class="progress-sow">${termsHtml}</div>
+  </div>`;
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -5551,7 +5796,13 @@ function restoreTvFilters(){
 }
 
 async function init(){
-  document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>{
+    if(b.dataset.view==='hod'&&document.querySelector('.view.active')?.id==='view-hod-progress'){
+      closeDashboardProgress();
+      return;
+    }
+    showView(b.dataset.view);
+  }));
   updateTeacherDropdown();
   updateClassDropdown();
   document.getElementById('sel-teacher').addEventListener('change',()=>{
